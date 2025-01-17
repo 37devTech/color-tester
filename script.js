@@ -39,7 +39,7 @@ questionTwoInput.addEventListener('keydown', function(event) {
 });
 
 function resultTwo() {
-    if (questionTwoInput.value === "black") {
+    if (questionTwoInput.value.toLowerCase() === "black") {
         document.getElementById('answer2').innerHTML = '<span style="color:green ;">Correct!</span>';
         setTimeout(() => {
             questionThreeInput.focus();
