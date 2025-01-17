@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 /* Styling for the Color Tester app for ESL elementary students */
 
 body {
