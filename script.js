@@ -1,3 +1,6 @@
+const correctAnswerSound = new Audio ('./correct-answer.mp3');
+const wrongAnswerSound = new Audio ('error-sound.mp3');
+const achievementSound = new Audio ('achievement-sound.mp3')
 const questionOneInput = document.getElementById('question1-input');
 const submitButtonOne = document.getElementById('question1-submit');
 const answer = document.getElementById('answer');
@@ -14,11 +17,13 @@ questionOneInput.addEventListener('keydown', function(event) {
 function resultOne() {
     if (questionOneInput.value.toLowerCase() === "red") {
         document.getElementById('answer').innerHTML = '<span style="color:green ;">Correct!</span>';
+        correctAnswerSound.play();
             setTimeout(() => {
                     questionTwoInput.focus();
                 }, 1000);
     } else {
         document.getElementById('answer').innerHTML = '<span style="color:red ;">Try again!</span>';
+        wrongAnswerSound.play();
         setTimeout(() => {
             questionOneInput.value = '';
             answer.innerHTML = '';
@@ -41,11 +46,13 @@ questionTwoInput.addEventListener('keydown', function(event) {
 function resultTwo() {
     if (questionTwoInput.value.toLowerCase() === "black") {
         document.getElementById('answer2').innerHTML = '<span style="color:green ;">Correct!</span>';
+        correctAnswerSound.play();
         setTimeout(() => {
             questionThreeInput.focus();
         }, 1000);
     } else {
         document.getElementById('answer2').innerHTML = '<span style="color:red ;">Try again!</span>';
+        wrongAnswerSound.play();
         setTimeout(() => {
             questionTwoInput.value = '';
             answerTwo.innerHTML = '';
@@ -68,11 +75,13 @@ questionThreeInput.addEventListener('keydown', function(event) {
 function resultThree() {
     if (questionThreeInput.value.toLowerCase() === "yellow") {
         document.getElementById('answer3').innerHTML = '<span style="color:green ;">Correct!</span>';
+        correctAnswerSound.play();
         setTimeout(() => {
             questionFourInput.focus();
         }, 1000);
     } else {
         document.getElementById('answer3').innerHTML = '<span style="color:red ;">Try again!</span>';
+        wrongAnswerSound.play();
         setTimeout(() => {
             questionThreeInput.value = '';
             answerThree.innerHTML = '';
@@ -96,12 +105,14 @@ questionFourInput.addEventListener('keydown', function(event) {
 function resultFour() {
     if (questionFourInput.value.toLowerCase() === "pink") {
         document.getElementById('answer4').innerHTML = '<span style="color:green ;">Correct!</span>';
+        correctAnswerSound.play();
         setTimeout(() => {
             questionFiveInput.focus();
         }, 1000);
 
     } else {
         document.getElementById('answer4').innerHTML = '<span style="color:red ;">Try again!</span>';
+        wrongAnswerSound.play();
         setTimeout(() => {
             questionFourInput.value = '';
             answerFour.innerHTML = '';
@@ -124,11 +135,13 @@ questionFiveInput.addEventListener('keydown', function(event) {
 function resultFive() {
     if (questionFiveInput.value.toLowerCase() === "blue") {
         document.getElementById('answer5').innerHTML = '<span style="color:green ;">Correct!</span>';
+        correctAnswerSound.play();
         setTimeout(() => {
             questionSixInput.focus();
         }, 1000);
     } else {
         document.getElementById('answer5').innerHTML = '<span style="color:red ;">Try again!</span>';
+        wrongAnswerSound.play();
         setTimeout(() => {
             questionFiveInput.value = '';
             answerFive.innerHTML = '';
@@ -151,11 +164,13 @@ questionSixInput.addEventListener('keydown', function(event) {
 function resultSix() {
     if (questionSixInput.value.toLowerCase() === "green") {
         document.getElementById('answer6').innerHTML = '<span style="color:green ;">Correct!</span>';
+        correctAnswerSound.play();
         setTimeout(() => {
             questionSevenInput.focus();
         }, 1000);
     } else {
         document.getElementById('answer6').innerHTML = '<span style="color:red ;">Try again!</span>';
+        wrongAnswerSound.play();
         setTimeout(() => {
             questionSixInput.value = '';
             answerSix.innerHTML = '';
@@ -178,11 +193,13 @@ questionSevenInput.addEventListener('keydown', function(event) {
 function resultSeven() {
     if (questionSevenInput.value.toLowerCase() === "orange") {
         document.getElementById('answer7').innerHTML = '<span style="color:green ;">Correct!</span>';
+        correctAnswerSound.play();
         setTimeout(() => {
             questionEightInput.focus();
         }, 1000);
     } else {
         document.getElementById('answer7').innerHTML = '<span style="color:red ;">Try again!</span>';
+        wrongAnswerSound.play();
         setTimeout(() => {
             questionSevenInput.value = '';
             answerSeven.innerHTML = '';
@@ -205,11 +222,13 @@ questionEightInput.addEventListener('keydown', function(event) {
 function resultEight() {
     if (questionEightInput.value.toLowerCase() === "purple") {
         document.getElementById('answer8').innerHTML = '<span style="color:green ;">Correct!</span>';
+        correctAnswerSound.play();
         setTimeout(() => {
             questionNineInput.focus();
         }, 1000);
     } else {
         document.getElementById('answer8').innerHTML = '<span style="color:red ;">Try again!</span>';
+        wrongAnswerSound.play();
         setTimeout(() => {
             questionEightInput.value = '';
             answerEight.innerHTML = '';
@@ -232,11 +251,13 @@ questionNineInput.addEventListener('keydown', function(event) {
 function resultNine() {
     if (questionNineInput.value.toLowerCase() === "brown") {
         document.getElementById('answer9').innerHTML = '<span style="color:green ;">Correct!</span>';
+        correctAnswerSound.play();
         setTimeout(() => {
             questionTenInput.focus();
         }, 1000);
     } else {
         document.getElementById('answer9').innerHTML = '<span style="color:red ;">Try again!</span>';
+        wrongAnswerSound.play();
         setTimeout(() => {
             questionNineInput.value = '';
             answerNine.innerHTML = '';
@@ -262,12 +283,15 @@ questionTenInput.addEventListener('keydown', function(event) {
 function resultTen() {
     if (questionTenInput.value.toLowerCase() === "white") {
         document.getElementById('answer10').innerHTML = '<span style="color:green ;">Correct!</span>';
+        correctAnswerSound.play();
         setTimeout(() => {
             finalGreeting.innerHTML = '<span style="color:blue ;">AMAZING WORK!!</span>';
+            achievementSound.play();
             refresh.focus();
-        }, 500);
+        }, 1000);
     } else {
         document.getElementById('answer10').innerHTML = '<span style="color:red ;">Try again!</span>';
+        wrongAnswerSound.play();
         setTimeout(() => {
             questionTenInput.value = '';
             answerTen.innerHTML = '';
